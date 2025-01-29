@@ -15,7 +15,7 @@ book:
   sharing: [twitter, linkedin]
   favicon: ./figures/favicon.png
   cover-image: ./figures/cover.svg
-  cover-image-alt: Basics of FEM
+  cover-image-alt: DG FEM
   twitter-card: true
   page-navigation: true
   page-footer: 
