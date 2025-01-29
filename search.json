@@ -1,0 +1,182 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Discontinuous Galerkin Finite Element Methods",
+    "section": "",
+    "text": "Preface\nThese lecture notes explains the concepts related to the theory and implementation of Discontinuous Galerkin Methods (DGM). We will focus on the partial differential equations that appear in the modeling of solids, fluids, heat-transfer, flow through porous medium.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#table-of-contents",
+    "href": "index.html#table-of-contents",
+    "title": "Discontinuous Galerkin Finite Element Methods",
+    "section": "Table of Contents",
+    "text": "Table of Contents\n\nChapter 1: 1D problem\n\n\nChapter 2: Elliptic problem\n\n\nChapter 3: Parabolic problem\n\n\nChapter 4: Convection Diffusion Reaction problem\n\n\nChapter 5: Elasticity problem\n\n\nChapter 6: Stokes problem\n\n\nChapter 7: Darcy problem",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Conceptualization and Mathematical models\nConceptualization is a process through which we idealize an engineering problem in the physical reality. The error induced due to the conceptualization is called the error due to the idealization.\nThe goal of conceptualization is to identify the simplest mathematical model that can provide predictions of the data of interest within a specified range of accuracy. In other words, the error due to the idealization should be as small as possible.\nA numerical simulation requires an underlying mathematical model. Mathematical models are mathematical description of the idealized problem, which we have obtained through the process of conceptualization. In mechanics, these mathematical models are described by the sets of differential equations and boundary and initial conditions. These differential equations are collectively called as the governing equations of the problem.\nFurther, the development of a mathematical model is not a trivial task, and following questions often help us in preparing the mathematical model.\nFor example, in solid mechanics, we often estimates displacements, stresses, strains, natural frequencies, etc., for a given computation domain, stress-strain model, and boundary conditions. The mathematical model is given by a set of partial differential equations (PDEs), which are obtained by satisfying:\nThe mathematical model obtained by satisfying the above conservation principals will yield a general description of the problem in the mechanics. These governing equations are valid for solids, liquids, and gases. However, in my opinion these models are computationally useless unless we make valid assumptions to simplify them to an extent so that they are computationally feasible. These assumptions are made while considering the material behavior, mode of deformation, dimensional reduction, etc.\nFor example, the usual beam, plate and shell model (theory) are special cases of a model based on the three-dimensional linear theory of elasticity, which in turn is a special case of a large family of models based on the equations of continuum mechanics. This is what we called the Hierarchic view of mathematical models.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#conceptualization-and-mathematical-models",
+    "href": "intro.html#conceptualization-and-mathematical-models",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "The Flow of Numerical Simulations\n\n\n\n\n\n\n\n\n\n\nIt is important to note that the mathematical models are the idealized representations of the reality, and we should never be confused with the physical reality that these models are supposed to represent.\n\n\n\n\n\nWhat aspects, features or phenomena of physical reality are of interest?\nWhat data must be predicted?\nWhat accuracy is required?\n\n\n\nconservation of linear and angular momentum\nconservation of mass\nconservation of energy\n\n\n\n\n\n\n\n\n\nExample\n\n\n\nIn practice we often starts from a very simple model, and then add challenging features in the model to capture the reality as accurately as possible.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#validation",
+    "href": "intro.html#validation",
+    "title": "1  Introduction",
+    "section": "1.2 Validation",
+    "text": "1.2 Validation\nAt this point we know that a mathematical model represents the idealization of an engineering problem. Therefore, every mathematical model has some error due to this idealization (or conceptualization). Validation is a process by which the numerical results of a mathematical model are tested against the experimental data. Through validation process we can estimate the error of conceptualization and we can have an idea about the predictive capabilities of the model.\nIf the error induced by the model is smaller than tolerance limit, then we can say that the model has passed the validation test. Otherwise, we need to improve the mathematical model until it passes the validation test.\nDepending upon the problem, such as design of an aircraft or design of a concrete dam, a series of validation experiments are performed. These validation experiments include the determination of physical properties and failure criteria for entire structure, sub-components, parts, etc.\nWhile assessing the results of validation experiments it is important to consider the limitations and uncertainties associated with the available information concerning the physical system being modeled.\n\nThe computation domain is usually assumed to corresponds to design specification. In reality, parts, sub-components and assemblies can deviate from their specifications and the degree of deviation may not be know, or would be difficult to incorporate into a model. For example, a concrete dam or earthen dam has many components, joints and heterogeneity, which may be too complex to include in a mathematical model.\nThe exact spatial-temporal distribution of the material properties may not be known accurately. Moreover, for many materials the constitutive laws are not known accurately.\nThe boundary conditions may not be known with a high degree of precision.\nThe magnitude of residual stresses inside the material may be not be known.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#discretization",
+    "href": "intro.html#discretization",
+    "title": "1  Introduction",
+    "section": "1.3 Discretization",
+    "text": "1.3 Discretization\nOnce the mathematical model is ready, we use numerical methods to solve the problem by using computers. The finite element method (FEM) is one of the most powerful and widely used numerical methods for finding approximate solutions to mathematical models. In FEM, the computation domain is divided into several elements of simple shapes such as triangle, quadrangle, tetrahedron, hexahedron, among others.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#verification",
+    "href": "intro.html#verification",
+    "title": "1  Introduction",
+    "section": "1.4 Verification",
+    "text": "1.4 Verification\nIn the verification process we verify that\n\nthe input data are correct\nthe computer code is functioning properly\nthe numerical errors in the computed solution is lower than the accepted limit",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html",
+    "href": "dg-in-one-dim.html",
+    "title": "One-Dimensional Problem",
+    "section": "",
+    "text": "Model problem\nLet \\(\\Omega=[0,L]\\), and \\(f:=f(x)\\in C^{0}(\\Omega)\\), and \\(k:=k(x)\\in C^{1}(\\Omega)\\) such that \\(0&lt;k_{min}\\le k(x)\\le k_{max},\\forall x\\in\\Omega\\), then\n\\[\n-\\frac{d}{dx}\\left(k\\frac{du}{dx}\\right)=f,\\text{ in }\\Omega\n\\]\n\\[\nu(0)=u_{0},u(L)=u_{L}\n\\]\nThe classical solution of above problem belongs to \\(C^{2}(\\Omega)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html#dg-methods",
+    "href": "dg-in-one-dim.html#dg-methods",
+    "title": "One-Dimensional Problem",
+    "section": "DG Methods",
+    "text": "DG Methods\nPartition \\(\\Omega\\) into \\(N\\) line elements \\(\\Omega_{k}=(x_{k},x_{k+1}),k=1,2,\\cdots,N\\), with \\(x_{1}=0\\) and \\(x_{N+1}=L\\). Let \\(h_{k}=x_{k+1}-x_{k}\\), and \\(h=\\max_{1\\le k\\le N}{h_{k}}\\).\nLet \\(\\mathcal{P}^{k}(\\Omega_{n})\\) be the space of polynomials of degree \\(k\\) on \\(\\Omega_{n}\\) (i.e., in the interior of nth element). Then we can define the following piecewise discontinuous polynomial of degree \\(k\\).\n\\[\nS^{k}\\Omega=\\left\\{ u:u\\vert_{\\Omega_{n}}\\in\\mathcal{P}^{k}\\left(\\Omega_{n}\\right),\\forall n=1,2,\\cdots,N\\right\\}\n\\]\nBecause \\(u\\) is discontinuous at node \\(n\\), we can define \\(u_{n}^{(1)}\\) and \\(u_{n}^{(2)}\\) as follows.\n\\[\nu_{n}^{(1)}=\\lim_{\\varepsilon\\rightarrow0}u(x_{n}+n^{(1)}\\varepsilon)\n\\]\n\\[\nu_{n}^{(2)}=\\lim_{\\varepsilon\\rightarrow0}u(x_{n}+n^{(2)}\\varepsilon)\n\\]\nwhere, \\(\\varepsilon&gt;0\\) and \\(n^{(1)}=+1\\) and \\(n^{(2)}=-1\\).\nNow we can define the jump and average at the internal nodes \\(n=2,\\cdots,N\\).\n\\[\n\\left[\\!\\left[u_{n}\\right]\\!\\right]=u_{n}^{(1)}n^{(1)}+u_{n}^{(2)}n^{(2)}\n\\]\n\\[\n\\left\\{ u(x_{n})\\right\\} =\\frac{1}{2}\\left(u_{n}^{(1)}+u_{n}^{(2)}\\right)\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html#variational-form",
+    "href": "dg-in-one-dim.html#variational-form",
+    "title": "One-Dimensional Problem",
+    "section": "Variational form",
+    "text": "Variational form\nLet \\(\\delta u\\in S^{k}(\\Omega)\\), then for \\(n=1,\\cdots,N\\):\n\\[\n\\begin{aligned} & \\int_{\\Omega_{n}}\\delta u\\left(-\\frac{d}{dx}\\left(k\\frac{du}{dx}\\right)-f\\right)d\\Omega\\\\\n& =\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\int_{\\Omega_{n}}\\delta ufd\\Omega-\\left(\\delta uk\\frac{du}{dx}\\right)_{x_{n}^{(2)}}n^{(2)}-\\left(\\delta uk\\frac{du}{dx}\\right)_{x_{n+1}^{(1)}}n^{(1)}\n\\end{aligned}\n\\]\nThe above form is defined over an element \\(\\Omega_{n},\\)by summing up these terms over all the elements, i.e. \\(n=1,2\\cdots,N\\), we obtain the following equation.\n\\[\n\\begin{aligned}\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=2}^{N}\\left[\\!\\left[\\delta uk\\frac{du}{dx}\\right]\\!\\right]_{x_{n}}\\\\\n-\\left(\\delta uk\\frac{du}{dx}\\right)_{x_{1}^{(2)}}n^{(2)}-\\left(\\delta uk\\frac{du}{dx}\\right)_{x_{N+1}^{(1)}}n^{(1)} & =\\int_{\\Omega}\\delta ufd\\Omega\n\\end{aligned}\n\\]\nLet us extend the definition of the jump and the average to the end points\n\\[\n\\left[\\!\\left[u\\right]\\!\\right]_{x_{1}}=u_{1}^{(2)}n^{(2)}\n\\]\n\\[\n\\left[\\!\\left[u\\right]\\!\\right]_{x_{N+1}}=u_{N+1}^{(1)}n^{(1)}\n\\]\n\\[\n\\left\\{ u\\right\\} _{x_{1}}=u_{1}^{(2)}\n\\]\n\\[\n\\left\\{ u\\right\\} _{x_{N+1}}=u_{N+1}^{(1)}\n\\]\nThen we can write the above variation form by the following equation.\n\\[\n\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta uk\\frac{du}{dx}\\right]\\!\\right]_{x_{n}}=\\int_{\\Omega}\\delta ufd\\Omega\n\\]\nNow for each internal nodes \\(n=2,\\cdots,N\\), we have following identity\n\\[\n\\left[\\!\\left[ab\\right]\\!\\right]_{n}=\\left[\\!\\left[a\\right]\\!\\right]_{n}\\left\\{ b\\right\\} _{n}+\\left\\{ a\\right\\} _{n}\\left[\\!\\left[b\\right]\\!\\right]_{n}\n\\]\nTherefore,\n\\[\n\\left[\\!\\left[\\delta uk\\frac{du}{dx}\\right]\\!\\right]_{n}=\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}+\\left\\{ \\delta u\\right\\} _{n}\\left[\\!\\left[k\\frac{du}{dx}\\right]\\!\\right]_{n}\n\\]\nNow the variation form becomes:\n\\[\n\\begin{aligned}\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n-\\sum_{n=1}^{N+1}\\left\\{ \\delta u\\right\\} _{n}\\left[\\!\\left[k\\frac{du}{dx}\\right]\\!\\right]_{n}=\\int_{\\Omega}\\delta ufd\\Omega\n\\end{aligned}\n\\]\nFrom the above equation it is clear that the jump and the average terms are responsible for coupling the adjacent elements, in other words the information between \\(\\Omega_{n-1}\\) and \\(\\Omega_{n}\\) is exchanged through the jump and average defined at node \\(x_{n}\\).\nFrom the view point of physics, the solution should not contain any jump in the flux at the element boundary. However, within FEM, it is a very strong condition (due to piecewise polynomial approximation over finite element mesh), the weak form of this condition is given by:\n\\[\n\\sum_{n=1}^{N+1}\\left\\{ \\delta u\\right\\} _{n}\\left[\\!\\left[k\\frac{du}{dx}\\right]\\!\\right]_{n}=0\n\\]\nBy using this relationship in the variation form we can obtain following equation.\n\\[\n\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}=\\int_{\\Omega}\\delta ufd\\Omega\n\\]\nAt this point we have added to variation form a mechanism to minimize the jump of gradient of solution at element boundary. However, the method is neither stable nor convergent. This is because, we should also minimize the jump in the trace of solution at the element boundary. This can be achieved by adding penalty terms to above-mentioned variation form.\n\\[\n\\begin{aligned} & \\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}\\\\\n= & \\int_{\\Omega}\\delta ufd\\Omega-\\varepsilon u\\left(0\\right)\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{1}+\\varepsilon u\\left(L\\right)\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{N+1}\n\\end{aligned}\n\\]\nThe second and third term on the right hand side feed the boundary condition into the formulation.\n\\[\nJ_{0}(u,v)=\\sum_{n=1}^{N+1}\\frac{\\sigma_{0}}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left[\\!\\left[v\\right]\\!\\right]_{n}\n\\]\n\\[\nJ_{1}(u,v)=\\sum_{n=1}^{N+1}\\frac{\\sigma_{1}}{max(h_{n-1},h_{n})}\\left[\\!\\left[\\frac{du}{dx}\\right]\\!\\right]_{n}\\left[\\!\\left[\\frac{dv}{dx}\\right]\\!\\right]_{n}\n\\]\nhere, \\(\\sigma_{0}\\) and \\(\\sigma_{1}\\) are nonnegative numbers. It clear that \\(J_{0}\\) penalizes the jump in test and trial functions at the boundary of finite element, and \\(J_{1}\\) penalizes the jump in the gradient of test and trial functions at the boundary of finite element. Also note that these terms are boundary integrals in 1D setting.\n\n\n\n\n\n\nFinal variational form\n\n\n\n\\[\n\\begin{aligned} & \\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}\\\\\n& +J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\\\\\n= & \\int_{\\Omega}\\delta ufd\\Omega-\\varepsilon u\\left(0\\right)\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{1}+\\varepsilon u\\left(L\\right)\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{N+1}\\\\\n& +\\frac{\\sigma_{0}}{max(h_{0},h_{1})}u\\left(0\\right)\\delta u_{1}+\\frac{\\sigma_{0}}{max(h_{N},h_{N+1})}u\\left(L\\right)\\delta u_{N+1}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html#bilinear-forms",
+    "href": "dg-in-one-dim.html#bilinear-forms",
+    "title": "One-Dimensional Problem",
+    "section": "Bilinear forms",
+    "text": "Bilinear forms\nThe bilinear form of Discontinuous Galerkin method presented above is denoted by \\(a_{\\varepsilon}:S^{k}(\\Omega)\\times S^{k}(\\Omega)\\rightarrow R\\) , and it is given by:\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}+J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nDepending upon the choices of parameters \\(\\varepsilon,\\sigma_{0},\\sigma_{1}\\) we obtain several variations of DG methods.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html#incomplete-interior-penalty-galerkin-iipg",
+    "href": "dg-in-one-dim.html#incomplete-interior-penalty-galerkin-iipg",
+    "title": "One-Dimensional Problem",
+    "section": "Incomplete Interior Penalty Galerkin (IIPG)",
+    "text": "Incomplete Interior Penalty Galerkin (IIPG)\nThe DG bilinear form presented in the previous chapter is given by\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}+J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nDawson and coworkers obtained IIPG by setting \\(\\varepsilon=0\\) in above bilinear form ,\n\\[\n\\begin{aligned}a_{0}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nthen,\n\\[\n\\begin{aligned}a_{0}(u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}k\\left(\\frac{du}{dx}\\right)^{2}-\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +J_{0}\\left(u,u\\right)+J_{1}\\left(u,u\\right)\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-one-dim.html#symmetric-interior-penalty-galerkin-method-sipg",
+    "href": "dg-in-one-dim.html#symmetric-interior-penalty-galerkin-method-sipg",
+    "title": "One-Dimensional Problem",
+    "section": "Symmetric interior penalty Galerkin method (SIPG)",
+    "text": "Symmetric interior penalty Galerkin method (SIPG)\nThe DG bilinear form presented in the previous chapter is given by\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}+J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nWe can obtain SIPG by setting \\(\\varepsilon=-1\\) and \\(\\sigma_{1}=0\\) and \\(\\sigma_{0}\\) should be greater than or equal to a large enough constant. This method was presented by Wheeler and Arnold .\n\\[\n\\begin{aligned}a_{-1}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& -\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\frac{\\sigma_{0}}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left[\\!\\left[v\\right]\\!\\right]_{n}\n\\end{aligned}\n\\]\nthen,\n\\[\n\\begin{aligned}a_{-1}(u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}k\\left(\\frac{du}{dx}\\right)^{2}-\\sum_{n=1}^{N+1}2\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\frac{\\sigma_{0}}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}^{2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\nIf we set \\(\\sigma_{0}=0\\), then this method is not stable.\n\n\n\nThe DG bilinear form presented in the previous chapter is given by\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}+J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nWe can obtain NIPG by setting \\(\\varepsilon=1\\) and \\(\\sigma_{1}=0\\) and \\(\\sigma_{0}=1\\) . This method was presented by Riviere, Wheeler and Girault in 1999 .\n\\[\n\\begin{aligned}a_{1}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\frac{1}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left[\\!\\left[v\\right]\\!\\right]_{n}\n\\end{aligned}\n\\]\nthen,\n\\[\n\\begin{aligned}a_{1}(u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}k\\left(\\frac{du}{dx}\\right)^{2}+\\sum_{n=1}^{N+1}\\frac{1}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}^{2}\\end{aligned}\n\\]\n\n\n\n\n\n\nIf we set \\(\\sigma_{0}=0\\), then we get NIPG0, which was proposed by Babuska and Coworkers in 1999 .Non-symmetric interior penalty Galerkin method (NIPG)\n\n\n\nThe DG bilinear form presented in the previous chapter is given by\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\varepsilon\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}+J_{0}\\left(\\delta u,u\\right)+J_{1}\\left(\\delta u,u\\right)\n\\end{aligned}\n\\]\nWe can obtain NIPG by setting \\(\\varepsilon=1\\) and \\(\\sigma_{1}=0\\) and \\(\\sigma_{0}=1\\) . This method was presented by Riviere, Wheeler and Girault in 1999 .\n\\[\n\\begin{aligned}a_{1}(\\delta u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}\\frac{d\\delta u}{dx}k\\frac{du}{dx}-\\sum_{n=1}^{N+1}\\left[\\!\\left[\\delta u\\right]\\!\\right]_{n}\\left\\{ k\\frac{du}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left\\{ k\\frac{d\\delta u}{dx}\\right\\} _{n}\\\\\n& +\\sum_{n=1}^{N+1}\\frac{1}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}\\left[\\!\\left[v\\right]\\!\\right]_{n}\n\\end{aligned}\n\\]\nthen,\n\\[\n\\begin{aligned}a_{1}(u,u) & =\\sum_{n=1}^{N}\\int_{\\Omega_{n}}k\\left(\\frac{du}{dx}\\right)^{2}+\\sum_{n=1}^{N+1}\\frac{1}{max(h_{n-1},h_{n})}\\left[\\!\\left[u\\right]\\!\\right]_{n}^{2}\\end{aligned}\n\\]\n\n\n\n\n\n\nIf we set \\(\\sigma_{0}=0\\), then we get NIPG0, which was proposed by Babuska and Coworkers in 1999 .",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>One-Dimensional Problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-multi-dim.html",
+    "href": "dg-in-multi-dim.html",
+    "title": "Higher dimensional problem",
+    "section": "",
+    "text": "Problem statement\n\\[\n-\\nabla\\cdot\\left({\\bf K}\\nabla u\\right)+\\alpha u=f\\text{ in }\\Omega\n\\]\n\\[\nu=u_{g}\\text{ on }\\Gamma_{g}\n\\]\n\\[\n{\\bf K}\\nabla u\\cdot{\\bf n}=h\\text{ on }\\Gamma_{h}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Higher dimensional problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-multi-dim.html#variation-form",
+    "href": "dg-in-multi-dim.html#variation-form",
+    "title": "Higher dimensional problem",
+    "section": "Variation form",
+    "text": "Variation form\n\\[\n\\begin{aligned}\\int_{\\Omega_{e}}\\delta u\\left(-\\nabla\\cdot\\left({\\bf K}\\nabla u\\right)+\\alpha u-f\\right)d\\Omega\\\\ =\\int_{\\Omega_{e}}\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\int_{\\Omega_{e}}\\alpha\\delta uu-\\int_{\\partial\\Omega_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n}-\\int_{\\Omega_{e}}\\delta ufd\\Omega \\end{aligned}\n\\]\nSumming up for all elements\n\\[\n\\sum_{e}\\int_{\\Omega_{e}}\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\sum_{e}\\int_{\\Omega_{e}}\\alpha\\delta uu-\\sum_{e}\\int_{\\partial\\Omega_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n}-\\sum_{e}\\int_{\\Omega_{e}}\\delta ufd\\Omega=0\n\\]\n\\[\n\\begin{aligned}\\sum_{e}\\int_{\\partial\\Omega_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n} & =\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left[\\delta u\\right]\\left\\{ {\\bf K}\\nabla u\\cdot{\\bf n}\\right\\} +\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left\\{ \\delta u\\right\\} \\left[{\\bf K}\\nabla u\\cdot{\\bf n}\\right]\\\\ & +\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n}+\\int_{\\Gamma_{h}}\\delta uh \\end{aligned}\n\\]\n\\[\n\\begin{aligned}\\sum_{e}\\int_{\\Omega_{e}}\\left(\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\alpha\\delta uu\\right)\\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left[\\delta u\\right]\\left\\{ {\\bf K}\\nabla u\\cdot{\\bf n}\\right\\} \\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left\\{ \\delta u\\right\\} \\left[{\\bf K}\\nabla u\\cdot{\\bf n}\\right]\\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n}-\\int_{\\Gamma_{h}}\\delta uh\\\\ -\\sum_{e}\\int_{\\Omega_{e}}\\delta ufd\\Omega=0 \\end{aligned}\n\\]\nNoting that \\(\\left[{\\bf K}\\nabla u\\cdot{\\bf n}\\right]=0\\), and adding penalty term for weak boundary condition.\n\\[\n\\begin{aligned}\\sum_{e}\\int_{\\Omega_{e}}\\left(\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\alpha\\delta uu\\right)\\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left[\\delta u\\right]\\left\\{ {\\bf K}\\nabla u\\cdot{\\bf n}\\right\\} \\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\delta u{\\bf K}\\nabla u\\cdot{\\bf n}\\\\ +\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}}\\int_{\\Gamma_{e}}\\left[u\\right]\\left\\{ {\\bf K}\\nabla\\delta u\\cdot{\\bf n}\\right\\} \\\\ +\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\left(u-u_{g}\\right){\\bf K}\\nabla\\delta u\\cdot{\\bf n}\\\\ -\\int_{\\Gamma_{h}}\\delta uh-\\sum_{e}\\int_{\\Omega_{e}}\\delta ufd\\Omega=0 \\end{aligned}\n\\]\nAfter adding jump penalty\n\\[\n\\begin{aligned}\\sum_{e}\\int_{\\Omega_{e}}\\left(\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\alpha\\delta uu\\right)\\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}\\cup\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\left[\\delta u\\right]\\left\\{ {\\bf K}\\nabla u\\cdot{\\bf n}\\right\\} \\\\ +\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}\\cup\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\left[u\\right]\\left\\{ {\\bf K}\\nabla\\delta u\\cdot{\\bf n}\\right\\} \\\\ +J_{0}^{\\sigma_{0},\\beta_{0}}\\left(\\delta u,u\\right)+J_{1}^{\\sigma_{1},\\beta_{1}}\\left(\\delta u,u\\right)\\\\ -\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}{\\bf K}\\nabla\\delta u\\cdot{\\bf n}u_{g}\\\\ -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\frac{\\sigma_{0}}{\\vert e\\vert^{\\beta_{0}}}\\int_{\\Gamma_{e}}\\delta uu_{g}\\\\ -\\int_{\\Gamma_{h}}\\delta uh-\\sum_{e}\\int_{\\Omega_{e}}\\delta ufd\\Omega=0 \\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Higher dimensional problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-multi-dim.html#bilinear-form",
+    "href": "dg-in-multi-dim.html#bilinear-form",
+    "title": "Higher dimensional problem",
+    "section": "Bilinear form",
+    "text": "Bilinear form\n\\[\n\\begin{aligned}a_{\\varepsilon}(\\delta u,u):= & \\sum_{e}\\int_{\\Omega_{e}}\\left(\\nabla\\delta u\\cdot{\\bf K}\\nabla u+\\alpha\\delta uu\\right)\\\\ & -\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}\\cup\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\left[\\delta u\\right]\\left\\{ {\\bf K}\\nabla u\\cdot{\\bf n}\\right\\} \\\\ & +\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{int}\\cup\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}\\left[u\\right]\\left\\{ {\\bf K}\\nabla\\delta u\\cdot{\\bf n}\\right\\} \\\\ & +J_{0}^{\\sigma_{0},\\beta_{0}}\\left(\\delta u,u\\right)+J_{1}^{\\sigma_{1},\\beta_{1}}\\left(\\delta u,u\\right) \\end{aligned}\n\\]\n\\[\n\\begin{aligned}L(\\delta u)= & \\sum_{e}\\int_{\\Omega_{e}}\\delta ufd\\Omega+\\int_{\\Gamma_{h}}\\delta uh\\\\ & +\\varepsilon\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\int_{\\Gamma_{e}}{\\bf K}\\nabla\\delta u\\cdot{\\bf n}u_{g}\\\\ & +\\sum_{\\Gamma_{e}\\in\\mathcal{E}_{g}}\\frac{\\sigma_{0}}{\\vert e\\vert^{\\beta_{0}}}\\int_{\\Gamma_{e}}\\delta uu_{g} \\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Higher dimensional problem</span>"
+    ]
+  },
+  {
+    "objectID": "dg-in-multi-dim.html#mixed-dgfem",
+    "href": "dg-in-multi-dim.html#mixed-dgfem",
+    "title": "Higher dimensional problem",
+    "section": "Mixed DGFEM",
+    "text": "Mixed DGFEM\n\nProblem statement\n\\[\n\\mathbf{v}=\\nabla{p}, \\text{ in } \\Omega\n\\]\n\\[\n-\\nabla \\cdot \\mathbf{v}=f, \\text{ in } \\Omega\n\\]\n\\[\np=p_{g}, \\text{ on } \\Gamma_{g}\n\\]\n\\[\n\\mathbf{v} \\cdot \\mathbf{n} = u_{gn}, \\text{ on } \\Gamma_{h}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Higher dimensional problem</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "4  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  }
+]
